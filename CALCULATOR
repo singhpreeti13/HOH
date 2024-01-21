@@ -1,0 +1,50 @@
+class Calculator:
+    def add(self, x, y):
+        return x + y
+
+    def subtract(self, x, y):
+        return x - y
+
+    def multiply(self, x, y):
+        return x * y
+
+    def divide(self, x, y):
+        if y != 0:
+            return x / y
+        else:
+            return "Error: Division by zero"
+
+def main():
+    calculator = Calculator()
+
+    print("Simple Calculator")
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    choice = input("Enter choice (1/2/3/4): ")
+
+    if choice not in ['1', '2', '3', '4']:
+        print("Invalid Input")
+        return
+
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        result = calculator.add(num1, num2)
+        print(f"{num1} + {num2} = {result}")
+    elif choice == '2':
+        result = calculator.subtract(num1, num2)
+        print(f"{num1} - {num2} = {result}")
+    elif choice == '3':
+        result = calculator.multiply(num1, num2)
+        print(f"{num1} * {num2} = {result}")
+    elif choice == '4':
+        result = calculator.divide(num1, num2)
+        print(f"{num1} / {num2} = {result}")
+
+if __name__ == "__main__":
+    main()
